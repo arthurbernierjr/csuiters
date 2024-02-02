@@ -4,10 +4,21 @@ import { useState } from "react";
 export default function Header() {
   const [phone, setPhone] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement submission logic here
-    console.log(phone); // For demonstration
+    try {
+      const response = await fetch('/api/leads/addLead', {
+        method: 'POST',
+        body: JSON.stringify({phone})
+      })
+      if(response.ok){
+        setPhone('')
+      } else {
+        throw new Error('unable to add lead')
+      }
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   return (

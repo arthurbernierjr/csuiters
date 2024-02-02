@@ -114,7 +114,7 @@ exports.createLead = async (req, res) => {
   try {
     const guest = new Lead(req.body);
     await guest.save();
-    res.status(201).json(guest);
+    res.status(200).json(guest);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
