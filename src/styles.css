@@ -35,7 +35,9 @@ body {
   text-align: center;
   padding: 20px;
 }
-
+footer .waiting-list-form {
+  display: none;
+}
 .waiting-list-form {
   background-color: #ffffff;
   margin: 20px auto;
@@ -226,6 +228,7 @@ body {
   }
   footer > .waiting-list-form {
     position: absolute;
+    display: block;
     left: 50%;
     z-index: 100;
   }
