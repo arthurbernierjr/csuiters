@@ -217,7 +217,7 @@ footer .waiting-list-form {
   .main-header {
     flex-direction: column;
     justify-content: center;
-    background-image: url("https://thecsuiters.com/mobile.png");
+    background-image: url("/mobile.svg");
   }
   .main-header > img {
     display: none;
@@ -241,6 +241,8 @@ footer .waiting-list-form {
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
+    z-index:4;
+    background-color:#6da7cc;
   }
   .main > .section > section {
     flex-direction: column;

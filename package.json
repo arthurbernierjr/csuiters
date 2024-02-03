@@ -31,12 +31,15 @@
   },
   "scripts": {
     "dev": "vite",
+    "expose": "vite --host 3000",
     "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",
     "start": "node server.js",
-    "dev:backend": "nodemon"
+    "dev:backend": "nodemon",
+    "push": "npm run build && git add -A  && git reg && git push origin main",
+    "release": "npm run push && ssh root@thecsuiters.com \"cd csuiters && git pull\""
   },
   "browserslist": [
     ">0.2%",
