@@ -211,6 +211,9 @@ footer .waiting-list-form {
   body {
     min-height: 120vh;
   }
+  .video-background {
+    display: none;
+  }
   .main-header {
     flex-direction: column;
     justify-content: center;
