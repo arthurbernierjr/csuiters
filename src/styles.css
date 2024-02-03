@@ -214,7 +214,7 @@ footer .waiting-list-form {
   .main-header {
     flex-direction: column;
     justify-content: center;
-    background-image: url("./mobile.png");
+    background-image: url("https://thecsuiters.com/mobile.png");
   }
   .main-header > img {
     display: none;
