@@ -4,9 +4,9 @@ const jwt = require('jsonwebtoken')
 
 
 const leadSchema = new mongoose.Schema({
-    name: String,
-    email: String, 
-    phone: String
+    name: {type: String, required: true, default: 'not provided'},
+    email: {type: String, required: true, default: 'not provided'}, 
+    phone: {type: String, required: true, default: 'not provided'}
 })
 
 const Lead = mongoose.model('Lead', leadSchema)

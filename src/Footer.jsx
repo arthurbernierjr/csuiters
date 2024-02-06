@@ -8,8 +8,11 @@ export default function Footer() {
     try {
       const response = await fetch('/api/leads/addLead', {
         method: 'POST',
-        body: JSON.stringify({phone})
-      })
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({phone})
+        })
       if(response.ok){
         setPhone('')
       } else {

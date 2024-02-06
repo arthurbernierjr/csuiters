@@ -9,6 +9,9 @@ export default function Header() {
     try {
       const response = await fetch('/api/leads/addLead', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({phone})
       })
       if(response.ok){
