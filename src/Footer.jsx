@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function Footer() {
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,7 +13,7 @@ export default function Footer() {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({phone})
+          body: JSON.stringify({name, email, phone})
         })
       if(response.ok){
         setPhone('')
@@ -30,6 +32,26 @@ export default function Footer() {
           <div className="form-control">
             <input
               type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              className="form-input"
+            />
+          </div>
+          <div className="form-control">
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="form-input"
+            />
+          </div>
+          <div className="form-control">
+            <input
+              type="text"
               name="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -39,11 +61,11 @@ export default function Footer() {
           </div>
           <input type="submit" value="Submit" className="form-submit" />
         </form>
-        <h1>
+       {/*<h1>
           Made with <i className="material-icons">favorite</i> by{" "}
           <a href="https://bigpoppacode.io">BigPoppaCode</a> &copy;
           {new Date().getFullYear()}
-        </h1>
+        </h1>*/}
       </footer>
     </>
   );
